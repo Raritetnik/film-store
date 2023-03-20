@@ -5,7 +5,6 @@ import ListeProduits from './produits/ListeProduits'
 
 
 const Produit = () => {
-    const hostname = window.location.hostname;
     const [produits, setProduits] = useState ([])
 
     // Remplissage au démarrage
@@ -15,14 +14,13 @@ const Produit = () => {
             setProduits(produitsDeServer)
         }
         getProduits()
-        //fetchTasks()
     },[]);
 
     // Receptions des produits
     const fetchProduits = async () => {
-    const res = await fetch(`https://mk-json-server.vercel.app/produits`)
-    const data = await res.json()
-    return data
+        const res = await fetch(`https://mk-json-server.vercel.app/produits`)
+        const data = await res.json()
+        return data
     }
 
     // Receptions des produit unique
@@ -54,22 +52,22 @@ const Produit = () => {
 
     //Add
     const addProduit =  async (produit) => {
-    const res = await fetch(`https://mk-json-server.vercel.app/produits`, {
-        method: 'POST',
-        headers: {
-        'Content-type': 'application/json'
-        },
-        body: JSON.stringify(produit)
-    })
-    const newProduit = await res.json()
-    setProduits([...produits, newProduit])
+        const res = await fetch(`https://mk-json-server.vercel.app/produits`, {
+            method: 'POST',
+            headers: {
+            'Content-type': 'application/json'
+            },
+            body: JSON.stringify(produit)
+        })
+        const newProduit = await res.json();
+        setProduits([...produits, newProduit])
     }
 
     let [showMenu, setShowMenu] = useState(false);
 
     return (
         <div className=''>
-            {showMenu && <div className='d-flex justify-content-center p-3 sticky-lg-top'>
+            {showMenu && <div className='d-flex justify-content-center p-3'>
                 <AddProduit onAdd={addProduit}/>
             </div>}
             <div className='container'>
