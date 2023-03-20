@@ -9,7 +9,7 @@ const Produit = () => {
 
     // Remplissage au démarrage
     useEffect(()=>  {
-            const getProduits = async () => {
+        const getProduits = async () => {
             const produitsDeServer = await fetchProduits()
             setProduits(produitsDeServer)
         }
