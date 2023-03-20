@@ -18,9 +18,9 @@ function App() {
           <Header/>
         </div>
         <Routes>
-          <Route path="/build" element={<Accueil/>}/>
-          <Route path='/build/accueil' element={<Accueil/>}/>
-          <Route path='/build/produit' element={<Produit/>}/>
+          <Route path="/" element={<Accueil/>}/>
+          <Route path='/accueil' element={<Accueil/>}/>
+          <Route path='/produit' element={<Produit/>}/>
         </Routes>
         <div className='col-12'>
           <Footer/>
