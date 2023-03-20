@@ -20,7 +20,7 @@ const Produit = () => {
 
     // Receptions des produits
     const fetchProduits = async () => {
-    const res = await fetch(`http://${hostname}:3000/produits`)
+    const res = await fetch(`https://mk-json-server.vercel.app/produits`)
     const data = await res.json()
     return data
     }
@@ -34,7 +34,7 @@ const Produit = () => {
 
     // Supprimer un produit unique
     const deleteProduit = async (id) => {
-        await fetch(`http://${hostname}:3000/produits/${id}`, {
+        await fetch(`https://mk-json-server.vercel.app/produits/${id}`, {
             method: 'DELETE',
         })
         setProduits(produits.filter((produit) => produit.id !== id))
@@ -42,7 +42,7 @@ const Produit = () => {
 
     // Modifier un paramètre un produit unique
     const modifierProduit = async (newProduit) => {
-        await fetch(`http://${hostname}:3000/produits/${newProduit.id}`,{
+        await fetch(`https://mk-json-server.vercel.app/produits/${newProduit.id}`,{
             method: 'PUT',
             headers:{
                 'Content-type': 'application/json'
@@ -54,7 +54,7 @@ const Produit = () => {
 
     //Add
     const addProduit =  async (produit) => {
-    const res = await fetch(`http://${hostname}:3000/produits`, {
+    const res = await fetch(`https://mk-json-server.vercel.app/produits`, {
         method: 'POST',
         headers: {
         'Content-type': 'application/json'
