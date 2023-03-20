@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btnMenu {
+  color: black;
+  text-decoration: none;
+}
+
+.btnMenu:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#btnAdder {
+  position: relative;
+  display: block;
+  margin: 20px;
+  top: 0;
+  left: 0;
+}
