@@ -5,7 +5,7 @@ import ListeProduits from './produits/ListeProduits'
 
 
 const Produit = () => {
-    const hostname = domain.hostname;
+    const hostname = window.location.hostname;
     const [produits, setProduits] = useState ([])
 
     // Remplissage au démarrage
@@ -16,7 +16,7 @@ const Produit = () => {
         }
         getProduits()
         //fetchTasks()
-    },[])
+    },[]);
 
     // Receptions des produits
     const fetchProduits = async () => {
